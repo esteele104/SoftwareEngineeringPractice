@@ -34,9 +34,16 @@ public class BankAccount {
 
     }
 
-
+    /**
+     *
+     * @param email
+     * @return boolean true if the email is valid and false if the email is invalid
+     */
     public static boolean isEmailValid(String email){
-        if (email.indexOf('@') == -1){
+        if(!email.endsWith(".com") && !email.endsWith(".org") && !email.endsWith(".edu") && !email.endsWith(".gov")){
+            return false;
+        }
+         if (email.indexOf('@') == -1 || email.indexOf('@') == 0){
             return false;
         }
         else {
