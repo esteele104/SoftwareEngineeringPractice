@@ -38,6 +38,8 @@ public class BankAccount {
      *
      * @param email
      * @return boolean true if the email is valid and false if the email is invalid
+     * email is valid if it ends with .gov, .com, .org, or .edu AND contains an @ in a position other than the
+     * beginning of the string
      */
     public static boolean isEmailValid(String email){
         if(!email.endsWith(".com") && !email.endsWith(".org") && !email.endsWith(".edu") && !email.endsWith(".gov")){
