@@ -8,6 +8,7 @@ import static org.junit.jupiter.api.Assertions.*;
 
 class BankAccountTest {
 
+
     @Test
     void getBalanceTest() {
         BankAccount bankAccount = new BankAccount("a@b.com", 200);
@@ -26,7 +27,8 @@ class BankAccountTest {
     @Test
     void isEmailValidTest(){
         assertTrue(BankAccount.isEmailValid( "a@b.com"));
-        assertFalse( BankAccount.isEmailValid(""));
+        assertFalse( BankAccount.isEmailValid("@a@b.com"));
+        assertFalse( BankAccount.isEmailValid("a@b"));
     }
 
     @Test
@@ -38,5 +40,7 @@ class BankAccountTest {
         //check for exception thrown correctly
         assertThrows(IllegalArgumentException.class, ()-> new BankAccount("", 100));
     }
+
+
 
 }
